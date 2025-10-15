@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding School Anmeldeformular</title>
+  </head>
+
+  <body>
+    <!-- Header Bereich -->
+    <header>
+      <h1>Tritt unserer Coding School bei</h1>
+      <p>
+        Fülle das Formular unten aus, um deine Programmier-Reise zu beginnen!
+      </p>
+    </header>
+
+    <!-- Hauptinhalt -->
+    <main>
+      <section>
+        <form action="#" method="get" autocomplete="on">
+          <!-- Persönliche Informationen Fieldset -->
+          <fieldset>
+            <legend>Persönliche Informationen</legend>
+
+            <!-- Vorname Feld -->
+            <!-- ? Wie verbinden wir Label und Input-Feld? -->
+            <div>
+              <label for="firstname">Vorname:</label><br />
+              <input
+                type="text"
+                id="firstname"
+                name="firstname"
+                placeholder="Anna"
+                required
+                autocomplete="given-name"
+              />
+              <!-- Visuell könnten placeholder labels zu ersetzen scheinen, aber für Barrierefreiheit müssen wir labels beibehalten -->
+              <!-- Später mit CSS können wir Labels visuell verstecken, wenn gewünscht -->
+            </div>
+
+            <!-- Nachname Feld -->
+            <div>
+              <label for="lastname">Nachname:</label><br />
+              <input
+                type="text"
+                id="lastname"
+                name="lastname"
+                placeholder="Müller"
+                required
+                autocomplete="family-name"
+              />
+            </div>
+
+            <!-- E-Mail Feld mit Autocomplete -->
+            <div>
+              <label for="email">E-Mail:</label><br />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="anna.mueller@example.com"
+                required
+                autocomplete="email"
+              />
+              <!-- E-Mail-Felder werden automatisch mit type="email" validiert -->
+            </div>
+
+            <!-- Telefon-Feld mit Pattern und Autocomplete -->
+            <!-- <div>
+              <label for="phone">Telefon:</label><br />
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="0123-456789"
+                pattern="[0-9]{4}-[0-9]{6}"
+                required
+                autocomplete="tel"
+              />
+              <small>Format: 0123-456789</small>
+            </div> -->
+          </fieldset>
+
+          <!-- Adress-Informationen Fieldset -->
+          <fieldset>
+            <legend>Adress-Informationen</legend>
+
+            <!-- Adress-Feld mit Autocomplete -->
+            <!-- <div>
+              <label for="address">Straße und Hausnummer:</label><br />
+              <input
+                type="text"
+                id="address"
+                name="address"
+                placeholder="Musterstraße 123"
+                autocomplete="street-address"
+              />
+            </div> -->
+
+            <!-- Postleitzahl Feld mit Pattern und Autocomplete -->
+            <div>
+              <label for="zipcode">Postleitzahl:</label><br />
+
+              <input
+                type="text"
+                id="zipcode"
+                name="zipcode"
+                placeholder="12345"
+                pattern="[0-9]{5}"
+                typing!
+                autocomplete="postal-code"
+              />
+              <small>5-stellige Postleitzahl</small>
+              <!-- Reguläre Ausdrücke für Validierung, nachdem Abschicken
+                        [0-9] bedeutet jede Ziffer von 0 bis 9
+                        {5} bedeutet genau 5 Instanzen des vorhergehenden Musters (also 5 Ziffern)   -->
+            </div>
+
+            <!-- Stadt Feld mit Autocomplete -->
+            <div>
+              <label for="city">Stadt:</label><br />
+              <input
+                type="text"
+                id="city"
+                name="city"
+                placeholder="Berlin"
+                autocomplete="address-level2"
+              />
+            </div>
+          </fieldset>
+
+          <!-- Mit autocomplete können
+              wir dem Browser genau anweisen, welche Daten in welches Feld kommen.
+               Damit können wir automatisch falsch ausgefüllte Felder vermeiden   -->
+
+          <!-- <input autocomplete="street-address" /> -->
+          <!-- Musterstraße 123 -->
+          <!-- <input autocomplete="address-level3" /> -->
+          <!-- Stadtteil (falls zutreffend) -->
+          <!-- <input autocomplete="address-level2" /> -->
+          <!-- Stadt -->
+          <!-- <input autocomplete="address-level1" /> -->
+          <!-- Bundesland -->
+          <!-- <input autocomplete="country" /> -->
+          <!-- Land -->
+          <!-- <input autocomplete="postal-code" /> -->
+          <!-- PLZ -->
+
+          <!-- Kurs-Informationen Fieldset -->
+          <fieldset>
+            <legend>Kurs-Informationen</legend>
+
+            <!-- Bootcamp-Auswahl Dropdown -->
+            <div>
+              <label for="bootcamp">Bootcamp auswählen:</label><br />
+              <select id="bootcamp" name="bootcamp" required>
+                <option value="" disabled selected>
+                  --Bitte wähle eine Option--
+                </option>
+                <option value="web-dev">Web & App Entwicklung</option>
+                <option value="data-science">Data Science</option>
+                <option value="ux-design">UX/UI Design</option>
+              </select>
+            </div>
+            <!-- Bspw: &bootcamp=web-dev -->
+
+            <!-- Kommentare Textarea für zusätzliche Informationen -->
+            <div>
+              <label for="comments">Zusätzliche Kommentare:</label><br />
+              <textarea
+                id="comments"
+                name="comments"
+                rows="4"
+                placeholder="Erzähle uns von deinen Zielen und was du erreichen möchtest"
+                maxlength="20"
+              ></textarea>
+            </div>
+          </fieldset>
+
+          <!-- Lernpräferenz Fieldset mit Radio-Buttons -->
+          <fieldset>
+            <legend>Lernpräferenz</legend>
+
+            <p>Wie lernst du am besten? Wähle eine Option:</p>
+
+            <!-- Alle Radio-Buttons teilen sich denselben "name" um eine einzige Gruppe zu erstellen -->
+            <div>
+              <input
+                type="radio"
+                id="morning"
+                name="study-time"
+                value="morning"
+                required
+              />
+              <label for="morning"
+                >Morgenmensch (Ich programmiere vor dem Kaffee!)</label
+              >
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                id="afternoon"
+                name="study-time"
+                value="afternoon"
+              />
+              <label for="afternoon"
+                >Nachmittags-Performer (Höchste Produktivität nach dem
+                Mittagessen)</label
+              >
+            </div>
+
+            <div>
+              <input type="radio" id="night" name="study-time" value="night" />
+              <label for="night"
+                >Nachteule (Mein bester Code entsteht nach Mitternacht)</label
+              >
+            </div>
+          </fieldset>
+          <!-- Bspw: &study-time=afternoon -->
+
+          <!-- AGB Checkbox -->
+          <div>
+            <label>
+              <input type="checkbox" name="terms" required />
+              Ich stimme den
+              <a href="#"> Allgemeinen Geschäftsbedingungen </a> zu
+            </label>
+          </div>
+          <!-- User hat checkbox ausgewaehlt: &terms= -->
+          <!-- User hat checkbox nicht ausgewaehlt: -->
+
+          <!-- Formular-Absende-Buttons -->
+          <div>
+            <button type="submit">Bewerbung absenden</button>
+            <button type="reset">Formular löschen</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Coding School. Alle Rechte vorbehalten.</p>
+    </footer>
+  </body>
+</html>
