@@ -1,0 +1,31 @@
+p {
+  background-color: cadetblue;
+}
+
+a {
+  text-decoration: overline;
+}
+
+a {
+  text-decoration: line-through;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+p.my-class {
+  background-color: chocolate;
+}
+
+/* .nav-links {
+        text-decoration: none;
+      } */
+
+/* nav ul:first-of-type a {
+        text-decoration: none;
+      } */
+
+#my-heading {
+  color: red;
+}
