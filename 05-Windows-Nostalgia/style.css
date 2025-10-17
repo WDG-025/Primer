@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  /* 16px -> 62.5% = 10px = 1rem */
+}
+
+body {
+  background-image: url(image.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+
+  font-family: Tahoma, sans-serif;
+  align-content: center;
+}
+
+/* a,
+button,
+input {
+  font: inherit;
+  color: inherit;
+} */
+
+.window {
+  background-color: #c0c0c0;
+  width: 47.5rem;
+  /* width: fit-content; */
+  /* margin: 1rem; */
+  border: 3px solid;
+  border-color: white #3c3d3d #3c3d3d white;
+  border-radius: 5px;
+  /* box-shadow: 3px 3px #3c3d3d, -3px -3px white; */
+  margin: auto;
+}
+
+.window__header {
+  color: white;
+  background-image: linear-gradient(to right, #0d2468, #abcbf1);
+  /* background-image: linear-gradient(to right in oklch, blue, yellow); */
+  padding: 0.5rem 2rem;
+  border-radius: 2.5px 2.5px 0px 0px;
+  /* # propably the most straightfoward solution */
+  /* border-bottom: 1px solid; */
+  /* border-image: linear-gradient(to right, #1e2b51, #92b2d1) 1; */
+  position: relative;
+}
+
+/* .border {
+    height: 3px;
+  background-image: linear-gradient(to right, #1e2b51, #92b2d1);
+} */
+
+.window__header::after {
+  content: "";
+  display: block;
+  /* background-color: red; */
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(to right, #1e2b51, #92b2d1);
+}
+
+.window__heading {
+  font-size: 1.25rem;
+  /* margin: 1rem 2rem; */
+}
+
+.window__content {
+  /* outline: 3px solid red; */
+  padding: 2rem;
+  /* display: flex;
+  gap: 2rem; */
+}
+
+.window__message {
+  display: inline;
+  margin-left: 2rem;
+  font-size: 1.5rem;
+  vertical-align: 1.25rem;
+}
+
+.window__img {
+  width: 4rem;
+  height: auto;
+  /* aspect-ratio: 1; */
+
+  /* box-shadow: 3px 3px 0px black; */
+  /* border-radius: 1000px; */
+  filter: drop-shadow(3px 3px 0px #808080);
+  image-rendering: pixelated;
+}
+
+.window__btn {
+  margin: 2rem 0 0 35rem;
+  /* float: right; */
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+
+  border: 3px outset;
+  letter-spacing: -0.5px;
+  font-weight: 600;
+  /* font-family: inherit; */
+  cursor: pointer;
+
+  /* * Same as .window__btn:active */
+  &:active {
+    /* background-color: green; */
+    border: 3px inset;
+  }
+}
