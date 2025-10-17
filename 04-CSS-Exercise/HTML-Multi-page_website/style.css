@@ -11,6 +11,37 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+body > * {
+  max-width: 1400px;
+  /* margin: 0 auto; */
+  margin-inline: auto;
+}
+
+/* @media (max-width: 800px) {
+  body {
+    background-color: rebeccapurple;
+  }
+}
+
+@media (min-width: 400px) {
+  body {
+    background-color: blue;
+    margin: 10rem;
+  }
+} */
+
+@media (width < 1200px) {
+  body {
+    background-color: orangered;
+  }
+}
+
+@media (500px < width < 1000px) {
+  body {
+    font-family: "Times New Roman", Times, serif;
+  }
+}
+
 a,
 button,
 input,
@@ -23,7 +54,7 @@ textarea {
 header {
   /* margin: 10px 50px 1px 4px; */
   /* margin-bottom: 20px; */
-  margin-inline: 1rem;
+  /* margin-inline: 1rem; */
 }
 
 header ul {
@@ -99,6 +130,11 @@ figure {
   /* border-style: dotted; */
   border-radius: 5px;
   vertical-align: middle;
+
+  @media (width < 460px) {
+    width: 10rem;
+    padding: 0.125rem 0.5rem;
+  }
 }
 
 .contact__input:focus-visible {
